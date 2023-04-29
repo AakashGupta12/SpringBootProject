@@ -43,37 +43,37 @@ public class UserController {
 	        return ResponseEntity.ok(books);
 	    }
 	    
-	    @GetMapping("/books/{author}")
+	    @GetMapping("/books/searchByAuthor/{author}")
 	    public ResponseEntity<List<Book>> searchByAuthor(@PathVariable String author) {
 	        List<Book> books = bookService.searchByAuthor(author);
 	        return ResponseEntity.ok(books);
 	    }
 	    
-	    @GetMapping("/books/{title}")
+	    @GetMapping("/books/searchByTitle/{title}")
 	    public ResponseEntity<List<Book>> searchByTitle(@PathVariable String title) {
 	        List<Book> books = bookService.searchByAuthor(title);
 	        return ResponseEntity.ok(books);
 	    }
 	    
-	    @GetMapping("/books/{publication}")
+	    @GetMapping("/books/searchByPublication/{publication}")
 	    public ResponseEntity<List<Book>> searchByPublication(@PathVariable String publication) {
 	        List<Book> books = bookService.searchByPublication(publication);
 	        return ResponseEntity.ok(books);
 	    }
 	    
-	    @GetMapping("/books/{id}")
+	    @GetMapping("/books/searchById/{id}")
 	    public ResponseEntity<Book> searchById(@PathVariable int id) {
 	        Book book = bookService.searchById(id);
 	        return ResponseEntity.ok(book);
 	    }
 	    
-	    @GetMapping("/books")
+	    @GetMapping("/books/PriceRange")
 	    public ResponseEntity<List<Book>> searchByPriceRange(@RequestParam int price_min, @RequestParam int price_max) {
 	        List<Book> books = bookService.searchByPriceRange(price_min, price_max);
 	        return ResponseEntity.ok(books);
 	    }
 	    
-	    @GetMapping("/books/sort")
+	    @GetMapping("/books/sorted")
 	    public ResponseEntity<List<Book>> sortByPriceAsc() {
 	        List<Book> books = bookService.sortByPriceAsc();
 	        return ResponseEntity.ok(books);

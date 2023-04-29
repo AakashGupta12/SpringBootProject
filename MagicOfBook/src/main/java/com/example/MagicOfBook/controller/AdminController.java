@@ -45,13 +45,13 @@ public class AdminController {
         return ResponseEntity.ok(books);
     }
 	
-	@GetMapping("/books/{id}")
+	@GetMapping("/books/searchById/{id}")
     public ResponseEntity<Book> searchById(@PathVariable int id) {
         Book book = bookService.searchById(id);
         return ResponseEntity.ok(book);
     }
     
-    @GetMapping("/books/{author}")
+    @GetMapping("/books/searchByAuthor/{author}")
     public ResponseEntity<List<Book>> searchByAuthor(@PathVariable String author) {
         List<Book> books = bookService.searchByAuthor(author);
         return ResponseEntity.ok(books);

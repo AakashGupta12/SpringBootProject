@@ -1,5 +1,6 @@
 package com.example.MagicOfBook.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,11 +17,22 @@ import lombok.NoArgsConstructor;
 @Table(name="book")
 public class Book {
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name="id")
 	int id;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	@Column(name="title")
 	String title;
+	@Column(name="author")
 	String author;
+	@Column(name="publication")
 	String publication;
+	@Column(name="price")
 	int price;
 	
 	public String getTitle() {
